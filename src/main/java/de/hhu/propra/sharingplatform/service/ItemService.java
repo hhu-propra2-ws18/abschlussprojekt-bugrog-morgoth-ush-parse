@@ -76,6 +76,7 @@ public class ItemService {
 
     public void editItem(Item newItem, long oldItemId, long userId) {
         Item oldItemRental = findItem(oldItemId);
+        itemIsFree(oldItemId);
         allowOnlyOwner(oldItemRental, userId);
         validateItem(newItem);
 
